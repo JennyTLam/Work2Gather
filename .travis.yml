@@ -1,3 +1,9 @@
+notifications:  
+  email:  
+    recipients:  
+      - jennytlam18@gmail.com  
+      on_success: always  
+      on_failure: always
 language: node_js
 node_js:
   - "stable"
@@ -9,9 +15,4 @@ env:
 script:
   - npm test
   - npm run build
-notifications:  
-  email:  
-    recipients:  
-    - jennytlam18@gmail.com  
-    on_success: always  
-    on_failure: always
+
