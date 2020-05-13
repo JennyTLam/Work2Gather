@@ -9,7 +9,9 @@ env:
 script:
   - npm test
   - npm run build
-notifications:
-  email:
-    - jenny.t.lam18@gmail.com
-    - jennylam2021@u.northwestern.edu
+notifications:  
+  email:  
+    recipients:  
+    - jennytlam18@gmail.com  
+    on_success: always  
+    on_failure: always
