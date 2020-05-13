@@ -14,3 +14,8 @@ test('starter test', () => {
 	const value = 4;
 	expect(value).toEqual(4);
 });
+
+test('starter test2', () => {
+	const value = 4;
+	expect(value).toEqual(4);
+});
