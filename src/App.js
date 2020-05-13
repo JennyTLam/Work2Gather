@@ -6,11 +6,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Goal from './Card/Goal'
 import AddGoal from './AddGoal';
 import GoalGrid from './GoalGrid';
 import firebase from './shared/firebase'
-import ToggleButtons from './Toggle'
 import Badge from '@material-ui/core/Badge'; 
 import MailIcon from '@material-ui/icons/Mail'; 
 import HomeIcon from '@material-ui/icons/Home'; 

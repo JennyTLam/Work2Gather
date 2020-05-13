@@ -6,7 +6,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import ProgressGrid from "./ProgressGrid";
 import firebase from "../shared/firebase";
 
 import {
@@ -170,8 +169,8 @@ export default function SeeMore({ goal, buttonText }) {
                 <YAxis className={classes.yaxis} label={{value: goal.metric, angle: -90, position: 'left'}}/>
                 <Tooltip />
                 <Legend verticalAlign="top" height={36}/>
-                <Bar name={creatorName} dataKey="uv" fill="#8884d8" />
-                <Bar name={inviteeName} dataKey="pv" fill="#82ca9d" />
+                <Bar  dataKey="uv" fill="#8884d8" />
+                <Bar  dataKey="pv" fill="#82ca9d" />
                 <ReferenceLine y={goal["minimum"]} label="Goal" stroke="green" strokeDasharray='5 5'  />
               </BarChart>
               :

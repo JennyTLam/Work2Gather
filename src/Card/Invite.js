@@ -23,52 +23,9 @@ const useStyles = makeStyles({
 });
 
 const Invite = ({ goal, user }) => {
-  const [progress, setProgress] = useState(0);
   const [creatorName, setCreatorName] = useState('');
 
   const classes = useStyles();
-  
-  useEffect(() => {
-    let users = Object.keys(goal["progress"]);
-    for(let j = 0; j <= getDayOn(); j++){
-      if(goal["progress"][users[0]][j] == undefined){
-        db.child("goals")
-          .child(goal["key"])
-          .child("progress")
-          .child(users[0])
-          .child(j)
-          .set(0);
-          //console.log("updating db for goal " + goal.key + " for user " + users[0])
-      }
-      if(goal["progress"][users[1]][j] == undefined){
-        db.child("goals")
-          .child(goal["key"])
-          .child("progress")
-          .child(users[1])
-          .child(j)
-          .set(0);
-          //console.log("updating db for goal " + goal.key + " for user " + users[1])
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    setProgress(getProgress);
-  }, [goal]);
-
-  const getDayOn = () => {
-    var startdate = new Date(goal["startDate"]);
-    var currentdate = new Date();
-    let deltatime = currentdate.getTime() - startdate.getTime();
-    let deltadays = Math.floor(deltatime / (1000 * 3600 * 24));
-    return deltadays;
-  };
-
-  const getProgress = () => {
-    const onDayNum = getDayOn();
-    const checkedIn = goal["progress"][user.uid][onDayNum];
-    return checkedIn;
-  };
 
   const accept = () => {
     db.child("goals").child(goal["key"]).child("confirmed").set(true);
@@ -96,7 +53,7 @@ const Invite = ({ goal, user }) => {
     return () => {
       dbUsers.off("value", setCreatorNameCallback);
     };
-  }, []);
+  }, [goal]);
 
   return (
     <Card className={classes.root}>

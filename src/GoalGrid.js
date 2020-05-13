@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Goal from './Card/Goal'
@@ -51,7 +50,7 @@ const GoalGrid = ({ goals, invites, user, gridView}) => {
     setUnfinished(unfinished_temp);
     setPending(pending_temp);
     setInvitelist(invitelist_temp);
-  }, [goals]);
+  }, [goals, invites]);
 
   const checkArchive = (uid, goal) =>{
     if (uid === goal["groupMembers"]["creator"]){
@@ -76,23 +75,25 @@ const GoalGrid = ({ goals, invites, user, gridView}) => {
 
           {(showGoals === 'ALL') ? 
             unfinished.map(goals => (!checkArchive(user.uid, goals)) ?
-              <Grid item className={classes.carditem}>
-                <Goal goal={goals} user={user} key={goals.key} />
+              <Grid item className={classes.carditem} key={goals.key + "ALLG"}>
+                <Goal goal={goals} user={user} key={goals.key + "ALL"} />
               </Grid> : null) 
             : 
             unfinished.map(goals => (!checkArchive(user.uid, goals) && (goals['progress'][user.uid][getDayOn(goals)] < goals['minimum'])) ?
-              <Grid item className={classes.carditem} >
-                <Goal goal={goals} user={user} key={goals.key} />
+              <Grid item className={classes.carditem} key={goals.key + "TODOG"} >
+                <Goal goal={goals} user={user} key={goals.key + "TODO"} />
               </Grid> : null) 
           }
         </Grid>
         <Grid container className={classes.gridcontainer} spacing={3} direction="row" justify="flex-start">
-          <Grid item xs={12} className={classes.griditem}><Typography variant="h4">Pending Goals</Typography></Grid>
-            {pending.map(goals => (!checkArchive(user.uid, goals))?
+          <Grid item xs={12} className={classes.griditem} key={goals.key + "PENDG"}>
+            <Typography variant="h4">Pending Goals</Typography>
+          </Grid>
+          {pending.map(goals => (!checkArchive(user.uid, goals))?
               <Grid item className={classes.carditem}>
-                <Goal goal={goals} user={user} key={goals.key} />
+                <Goal goal={goals} user={user} key={goals.key + "PEND"} />
               </Grid> : null)
-            }
+          }
         </Grid>
       </React.Fragment>
       : 
@@ -100,12 +101,14 @@ const GoalGrid = ({ goals, invites, user, gridView}) => {
       (gridView === "INVITES") ?
       <React.Fragment>
         <Grid container className={classes.gridcontainer} spacing={3} direction="row" justify="flex-start">
-          <Grid item xs={10} className={classes.griditem}><Typography variant="h4">New Invites</Typography></Grid>
+          <Grid item xs={10} className={classes.griditem}>
+            <Typography variant="h4">New Invites</Typography>
+          </Grid>
           {invitelist.map(goals =>
             <Grid item className={classes.carditem}>
-              <Invite goal={goals} user={user} key={goals.key} />
-            </Grid>
-          )}
+              <Invite goal={goals} user={user} key={goals.key + "INVITE"} />
+            </Grid>)
+          }
         </Grid>
       </React.Fragment>
       : 
@@ -113,7 +116,7 @@ const GoalGrid = ({ goals, invites, user, gridView}) => {
           <Grid item xs={12} className={classes.griditem}><Typography variant="h4">Archive</Typography></Grid>
           {unfinished.map(goals => checkArchive(user.uid, goals) ?
             <Grid item className={classes.carditem}>
-              <ArchiveCard goal={goals} user={user} key={goals.key} />
+              <ArchiveCard goal={goals} user={user} key={goals.key + "ARCHIVE"} />
             </Grid> : null)
           }
       </Grid>}
