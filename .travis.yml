@@ -10,4 +10,6 @@ script:
   - npm test
   - npm run build
 notifications:
-  - jennytlam18@gmail.com
+  email:
+    - jenny.t.lam18@gmail.com
+    - jennylam2021@u.northwestern.edu
