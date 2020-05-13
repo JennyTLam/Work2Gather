@@ -69,8 +69,8 @@ const Welcome = ({ user, invites, setGridView}) => {
                 <MailIcon />
               </Badge>
             </IconButton>
-          </Tootip>
-          <Tooltip title="Archie">
+          </Tooltip>
+          <Tooltip title="Archive">
             <IconButton  onClick={() => setGridView("ARCHIVE")}>
               <ArchiveIcon className={classes.icons}/>
             </IconButton>
