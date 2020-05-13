@@ -11,4 +11,5 @@ script:
   - npm run build
 notifications:
   email:
-    - jennytlam18@gmail.com
+    - jenny.t.lam18@gmail.com
+    - jennylam2021@u.northwestern.edu
