@@ -9,3 +9,8 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 */
+
+test('starter test', () => {
+	const value = 4;
+	expect(value).toEqual(4);
+});
