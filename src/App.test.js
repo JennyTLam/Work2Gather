@@ -12,5 +12,5 @@ test('renders learn react link', () => {
 
 test('starter test', () => {
 	const value = 4;
-	expect(value).toEqual(4);
+	expect(value).toEaqual(4);
 });
