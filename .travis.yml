@@ -9,3 +9,11 @@ cache:
 script:
   - npm test
   - npm run build
+notifications:
+  email:
+    recipients:
+      - jennytlam18@gmail.com
+      - jennylam2021@u.northwestern.edu
+    on_success: always
+    on_failure: always
+    
