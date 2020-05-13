@@ -9,4 +9,5 @@ env:
 script:
   - npm test
   - npm run build
-  
+notifications:
+  - jennytlam18@gmail.com
