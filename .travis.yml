@@ -16,6 +16,7 @@ notifications:
   email:
     recipients:
       - jennytlam18@gmail.com
+      - jenny.t.lam18@gmail.com
       - jennylam2021@u.northwestern.edu
     on_success: always
     on_failure: always
