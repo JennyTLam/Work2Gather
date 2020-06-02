@@ -97,7 +97,7 @@ const SignIn = () => (
 
 const Banner = ({ user, invites, title, setGridView }) => (
   <React.Fragment>
-    {user ? <Welcome user={user} invites={invites} setGridView={setGridView}/> : <SignIn />}
+    {user ? <Welcome user={user} invites={invites} setGridView={setGridView}/> : <SignIn data-cy="signin"/>}
   </React.Fragment>
 );
 
