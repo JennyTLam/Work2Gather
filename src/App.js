@@ -80,7 +80,7 @@ const Welcome = ({ user, invites, setGridView}) => {
             Welcome, {user.displayName ? user.displayName.split(' ')[0] : ""}
           </Typography>
           <Button style={{ fontSize: 21 }} color="inherit" onClick={() => { setGridView("ACTIVE"); firebase.auth().signOut() }}>
-            Log out
+            Log Out
           </Button>
         </Toolbar>
       </AppBar>
