@@ -161,6 +161,7 @@ const ArchiveCard = ({ goal, user }) => {
 
   return (
     <Badge 
+      data-testid="deleter"
       badgeContent={<ClearIcon onClick={()=>setOpen(true)}/>} 
       color="primary"
       anchorOrigin={{
@@ -168,8 +169,8 @@ const ArchiveCard = ({ goal, user }) => {
         horizontal: 'right',
       }}
       >
-        <Dialog open={open} onClose={()=>setOpen(false)}>
-          <DialogContent>
+        <Dialog  data-testid="xout" open={open} onClose={()=>setOpen(false)}>
+          <DialogContent >
             Are you sure you want to delete this goal?
           </DialogContent>
           <DialogActions>
@@ -220,7 +221,7 @@ const ArchiveCard = ({ goal, user }) => {
             </div></div>
             <br></br>
             
-            <div style={{textAlign:'center', display:'inline-block', width:'100%'}}><div style={{textAlign:'center'}}>            
+            <div data-testid="graph" style={{textAlign:'center', display:'inline-block', width:'100%'}}><div style={{textAlign:'center'}}>            
                 <SeeMore buttonText={'Review Goal'} goal={goal} />
               </div>
               </div>

@@ -42,10 +42,13 @@ test('check see more graphs toggle', async () => {
     render(<SeeMore goal={goal} /> )
     fireEvent.click(screen.getByText('See More'))
     await waitForElement(() => screen.getByTestId("BAR"))
+    expect(screen.getByTestId("BAR")).toBeInTheDocument()
     fireEvent.click(screen.getByText('Line'))
     await waitForElement(() => screen.getByTestId("LINE"))
+    expect(screen.getByTestId("LINE")).toBeInTheDocument()
     fireEvent.click(screen.getByText('Area'))
     await waitForElement(() => screen.getByTestId("AREA"))
+    expect(screen.getByTestId("AREA")).toBeInTheDocument()
 
 });
 

@@ -15,7 +15,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 test('check reviewing goal', async () => {
     var goal = {
-      "archivedCreator" : false,
+      "archivedCreator" : true,
       "archivedInvitee" : false,
       "confirmed" : true,
       "deleted" : true,
@@ -39,10 +39,11 @@ test('check reviewing goal', async () => {
       "startDate" : "4/23/2020",
       "title" : "Daily Pushups"
     }
-    
-    render(<ArchiveCard goal={goal}/>)
+
+    const {container} = render(<ArchiveCard goal={goal}/>)
+    const review = getByTestId(container, "graph")
+    expect(review).toBeInTheDocument()
     fireEvent.click(screen.getByText('Review Goal'))
     await waitForElement(() => screen.getByText('Close'))
     fireEvent.click(screen.getByText('Review Goal'))
 });
-
