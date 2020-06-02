@@ -2,7 +2,6 @@ import React from 'react';
 import { render, fireEvent, waitForElement, screen, } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { ExpansionPanelActions } from '@material-ui/core';
-import ArchiveCard from './ArchiveCard';
 import SeeMore from './SeeMore';
 import {
     getByLabelText,
@@ -13,7 +12,7 @@ import {
   } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 
-test('check reviewing goal', async () => {
+test('check see more graphs toggle', async () => {
     var goal = {
       "archivedCreator" : false,
       "archivedInvitee" : false,
@@ -39,10 +38,14 @@ test('check reviewing goal', async () => {
       "startDate" : "4/23/2020",
       "title" : "Daily Pushups"
     }
-    
-    render(<ArchiveCard goal={goal}/>)
-    fireEvent.click(screen.getByText('Review Goal'))
-    await waitForElement(() => screen.getByText('Close'))
-    fireEvent.click(screen.getByText('Review Goal'))
+   
+    render(<SeeMore goal={goal} /> )
+    fireEvent.click(screen.getByText('See More'))
+    await waitForElement(() => screen.getByTestId("BAR"))
+    fireEvent.click(screen.getByText('Line'))
+    await waitForElement(() => screen.getByTestId("LINE"))
+    fireEvent.click(screen.getByText('Area'))
+    await waitForElement(() => screen.getByTestId("AREA"))
+
 });
 

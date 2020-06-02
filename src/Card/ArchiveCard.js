@@ -220,20 +220,6 @@ const ArchiveCard = ({ goal, user }) => {
             </div></div>
             <br></br>
             
-
-            {/* <Slider
-            style={{ width: "95%", marginLeft: "2%", float: "center" }}
-            defaultValue={5}
-            getAriaValueText={(value) => value}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={1}
-            onChange={handleSliderChange}
-            marks
-            min={0}
-            max={15}
-            /> */}
-
             <div style={{textAlign:'center', display:'inline-block', width:'100%'}}><div style={{textAlign:'center'}}>            
                 <SeeMore buttonText={'Review Goal'} goal={goal} />
               </div>
