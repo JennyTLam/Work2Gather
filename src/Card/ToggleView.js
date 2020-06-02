@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 const ToggleButtonsView = ({ showView, setShowView }) => {
     const handleShowView = (event, newShowView) => {
         if (newShowView !== null) {
-            setShowView(newShowView);
+            setShowView("BAR");
         }
     };
 
