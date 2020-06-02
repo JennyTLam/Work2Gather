@@ -233,7 +233,7 @@ const Goal = ({ goal, user }) => {
     setCircle2Top(0 - circle2Radius / 2 + backRadius / 2);
 
     //  Reminder Notifications
-    setLastRemindDay(getReminder(user.id));
+    setLastRemindDay(getReminder(user.uid));
   }, [goal]);
 
 

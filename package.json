@@ -9,7 +9,6 @@
     "@material-ui/lab": "^4.0.0-alpha.52",
     "@material-ui/pickers": "^3.2.10",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "date-fns": "^2.12.0",
     "firebase": "^7.14.0",
@@ -23,6 +22,7 @@
     "start": "react-scripts start",
     "build": "set \"CI=false\" && react-scripts build",
     "test": "react-scripts test",
+    "cypress:open": "cypress open",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^9.5.0",
+    "cypress": "^4.7.0",
     "typescript": "^3.8.3"
   }
 }
