@@ -20,7 +20,9 @@ describe ('Test App', () => {
     cy.contains('Cancel');
   });
 
-  it ('can filter by status', () => {
+   it ('can filter by status', () => {
+   	cy.visit ('/');
+    cy.contains('Sign in with Google').click()
   	cy.visit('/GoalGrid')
   	cy.contains('Show All').click();
   	cy.visit('/GoalGrid')
