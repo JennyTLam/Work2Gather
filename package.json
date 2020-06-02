@@ -23,7 +23,9 @@
     "build": "set \"CI=false\" && react-scripts build",
     "test": "react-scripts test",
     "cypress:open": "cypress open",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:ci": "cypress run --config video=false",
+    "test:ci": "react-scripts test --watchAll=false && start-server-and-test start http://localhost:3000 cypress:ci"
   },
   "eslintConfig": {
     "extends": "react-app"
