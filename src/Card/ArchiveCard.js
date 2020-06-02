@@ -198,7 +198,7 @@ const ArchiveCard = ({ goal, user }) => {
             <div
               style={{ width: "20%", display: "inline-block", float: "right" }}
             >
-              <Table>
+              <Tabl>
                 <TableBody>
                   <TableRow>
                     <TableCell className={classes.ourSpecialBlue}>
