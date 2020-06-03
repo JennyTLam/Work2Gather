@@ -155,7 +155,8 @@ const AddGoal = ({ open, user, setOpen, emailTouid }) => {
     <React.Fragment>
       <Grid container direction="row" justify="center">
         <Grid item>
-          <Button
+          <button
+            data-cy="addgoal"
             className={classes.button}
             variant="contained"
             color="primary"
@@ -164,7 +165,7 @@ const AddGoal = ({ open, user, setOpen, emailTouid }) => {
             onClick={handleOpen}
           >
             Add a new goal
-          </Button>
+          </button>
         </Grid>
       </Grid>
       <Dialog open={open} onClose={handleClose}>
